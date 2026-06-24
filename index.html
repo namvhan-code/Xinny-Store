@@ -16,7 +16,7 @@
         }
         
         @keyframes float-up-down {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
+           0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-15px) rotate(10deg); }
         }
         @keyframes float-left-right {
@@ -48,24 +48,19 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 1);
-            box-shadow: 0 20px 50px -10px rgba(70, 31, 113, 0.15), 
-                        inset 0 2px 10px rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 40px;
+            box-shadow: 0 20px 50px -10px rgba(168, 85, 247, 0.2);
         }
 
         .virtual-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
-        .virtual-card:hover {
-            transform: translateY(-4px);
-        }
-        .virtual-card:active {
-            transform: translateY(2px) scale(0.98);
-        }
+        .virtual-card:hover { transform: translateY(-4px); }
+        .virtual-card:active { transform: translateY(2px) scale(0.98); }
         
-        ::-webkit-scrollbar {
-            width: 0px;
-        }
+        ::-webkit-scrollbar { width: 0px; }
     </style>
     
     <script>
@@ -73,24 +68,15 @@
             theme: {
                 extend: {
                     colors: {
-                        cream: {
-                            50: '#fffdfa',
-                            100: '#fdf5ee',
-                            200: '#fae8d4',
-                        },
-                        brown: {
-                            300: '#d4b49e',
-                            400: '#bc9680',
-                            500: '#8b5e3c',
-                            600: '#5c3d26',
-                        },
                         pink: {
-                            50: '#E9CEFF',
-                            100: '#E9CEFF',
-                            200: '#DFC4FF',
-                            300: '#DFC4FF',
-                            400: '#461F71',
-                            500: '#461F71',
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
                         }
                     }
                 }
@@ -98,128 +84,61 @@
         }
     </script>
 </head>
-<body class="flex flex-col items-center py-6 px-4 text-[#461F71] relative overflow-x-hidden">
+<body class="flex flex-col items-center py-6 px-4 text-pink-700 relative overflow-x-hidden">
 
     <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-[#DFC4FF] anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute top-[15%] left-[2%] w-6 h-6 text-[#E9CEFF]/60 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[8%] left-[25%] w-4 h-4 text-[#461F71]/50 anim-float-3" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
-        <svg class="absolute top-[10%] right-[8%] w-10 h-10 text-[#E9CEFF] anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[2%] right-[20%] w-5 h-5 text-[#E9CEFF]/80 anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute top-[40%] -left-2 w-12 h-12 text-[#E9CEFF] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute top-[50%] right-[2%] w-6 h-6 text-[#DFC4FF] anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-        <svg class="absolute bottom-[10%] left-[10%] w-8 h-8 text-[#E9CEFF] anim-float-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <svg class="absolute bottom-[5%] right-[15%] w-7 h-7 text-[#E9CEFF]/70 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-        <svg class="absolute bottom-[20%] right-[5%] w-4 h-4 text-[#461F71]/40 anim-pulse" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+        <svg class="absolute top-[5%] left-[10%] w-8 h-8 text-pink-300 anim-float-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        <svg class="absolute top-[10%] right-[8%] w-10 h-10 text-pink-200 anim-float-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
     </div>
 
-    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-[#461F71]/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-[#461F71]/40">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 text-[#E9CEFF]">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        คัดลอกเลขบัญชีแล้ว
+    <div id="toast" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-pink-500/95 backdrop-blur-sm text-white px-6 py-3 rounded-full shadow-xl transition-all duration-300 opacity-0 translate-y-4 pointer-events-none z-50 flex items-center gap-2 font-medium text-sm border border-pink-400">
+        คัดลอกข้อมูลแล้ว
     </div>
 
     <div class="max-w-[420px] w-full relative z-10 space-y-5 pb-10">
         
         <div class="text-center pt-2 pb-2 relative">
-            <h1 class="text-2xl font-bold tracking-tight text-[#461F71] flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#461F71] anim-pulse">
-                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                </svg>
+            <h1 class="text-2xl font-bold tracking-tight text-pink-700 flex items-center justify-center gap-2">
                 Xinny Store
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-[#461F71] anim-pulse transform -scale-x-100">
-                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                </svg>
             </h1>
-            <p class="text-sm font-medium text-[#461F71] mt-1">Payment & Checkout</p>
+            <p class="text-sm font-medium text-pink-500 mt-1">Payment & Checkout</p>
         </div>
 
-        <div class="glass-card rounded-[40px] p-3 relative z-10">
-            <svg class="absolute -top-4 -left-2 w-9 h-9 text-[#DFC4FF] anim-float-1 z-20 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="absolute top-[25%] -right-3 w-7 h-7 text-[#E9CEFF] anim-float-2 z-20 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-            <svg class="absolute bottom-[40%] -left-3 w-5 h-5 text-[#461F71] anim-spin z-20 drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-
-            <div class="relative p-2 rounded-[36px] z-10">
-                <svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)" rx="34" fill="none" stroke="#461F71" stroke-width="2.5" stroke-dasharray="12 12" stroke-linecap="round" class="animate-dash" />
-                </svg>
-                <div class="rounded-[28px] overflow-hidden relative shadow-sm border-[4px] border-white">
-                    <img src="New ♡ 01_20260624162939.png" alt="บัญชี Xinny Store" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x600/e9ceff/461f71?text=XINNY+STORE'">
+        <div class="glass-card p-3 relative z-10">
+            <div class="relative p-2 rounded-[36px] z-10 border-2 border-pink-200 border-dashed">
+                <div class="rounded-[28px] overflow-hidden relative shadow-sm">
+                    <img src="New ♡ 01_20260624162939.png" alt="บัญชี Xinny Store" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x600/fce7f3/ec4899?text=Xinny+Store'">
                 </div>
             </div>
 
             <div class="p-4 pt-6 space-y-5">
-                
                 <div class="text-center space-y-3">
-                    <p class="text-[15px] font-medium leading-relaxed text-[#461F71]">
-                        <span class="inline-flex items-center justify-center gap-1">
-                            เลขบัญชีตามนี้เลยค่า
-                            <svg class="w-4 h-4 text-[#461F71] anim-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                        </span>
-                        <br>ชื่อบัญชี <span class="text-[#461F71] font-bold bg-[#E9CEFF]/80 px-2.5 py-0.5 rounded-lg border border-[#461F71]/10 relative inline-block">
-                            ณัฏฐวรรณ จันทมาพร
-                            <svg class="absolute -top-2 -right-2.5 w-4 h-4 text-[#461F71] anim-float-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </span>เท่านั้นน้า!!
+                    <p class="text-[15px] font-medium leading-relaxed text-pink-800">
+                        เลขบัญชีตามนี้เลยค่า<br>
+                        ชื่อบัญชี <span class="text-pink-600 font-bold bg-pink-100 px-3 py-1 rounded-xl border border-pink-200">ณัฏฐวรรณ จันทมาพร</span>
                     </p>
                 </div>
 
-                <div class="flex items-center gap-3 py-2">
-                    <div class="h-px bg-[#461F71]/20 flex-1"></div>
-                    <span class="text-[11px] font-semibold text-[#461F71]/50 tracking-wider uppercase">เลือกช่องทางชำระเงิน</span>
-                    <div class="h-px bg-[#461F71]/20 flex-1"></div>
-                </div>
-
                 <div class="space-y-4">
-                    
-                    <div class="virtual-card relative bg-gradient-to-br from-[#461F71] to-[#461F71] rounded-[24px] p-5 shadow-lg shadow-[#461F71]/20 overflow-hidden cursor-pointer border border-[#461F71]/30" onclick="copyText('106-3-79662-6', this, 'kbank')">
-                        <div class="relative z-10 flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <div class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
-                                    <span class="text-white font-bold text-sm tracking-wider">KBank</span>
-                                </div>
-                                <button class="kbank-btn bg-white text-[#461F71] text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">
-                                    คัดลอก
-                                </button>
-                            </div>
-                            <div class="mt-2">
-                                <div class="text-white/90 text-[11px] font-medium mb-1 drop-shadow-sm">กสิกร (ณัฏฐวรรณ)</div>
-                                <div class="text-white font-bold text-[22px] tracking-widest leading-none drop-shadow-md">106-3-79662-6</div>
-                            </div>
+                    <div class="virtual-card bg-gradient-to-br from-pink-300 to-pink-400 rounded-[24px] p-5 shadow-lg overflow-hidden cursor-pointer border border-pink-200" onclick="copyText('106-3-79662-6', this)">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">กสิกรไทย</span>
+                            <span class="text-white text-xs bg-white/20 px-2 py-1 rounded-full">คัดลอก</span>
                         </div>
+                        <div class="text-white font-bold text-[22px]">106-3-79662-6</div>
                     </div>
 
-                    <div class="virtual-card relative bg-gradient-to-br from-[#DFC4FF] to-[#DFC4FF] rounded-[24px] p-5 shadow-lg shadow-[#461F71]/10 overflow-hidden cursor-pointer border border-[#461F71]/20" onclick="copyText('0887602271', this, 'true')">
-                        <div class="relative z-10 flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <div class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
-                                    <span class="text-[#461F71] font-bold text-sm tracking-wider">TrueMoney</span>
-                                </div>
-                                <button class="true-btn bg-white text-[#461F71] text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">
-                                    คัดลอก
-                                </button>
-                            </div>
-                            <div class="mt-2">
-                                <div class="text-[#461F71]/90 text-[11px] font-medium mb-1 drop-shadow-sm">วอเลต (ณัฏฐวรรณ)</div>
-                                <div class="text-[#461F71] font-bold text-[22px] tracking-widest leading-none drop-shadow-md">0887602271</div>
-                            </div>
+                    <div class="virtual-card bg-gradient-to-br from-pink-400 to-pink-500 rounded-[24px] p-5 shadow-lg overflow-hidden cursor-pointer border border-pink-200" onclick="copyText('088-760-2271', this)">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white font-bold">Wallet</span>
+                            <span class="text-white text-xs bg-white/20 px-2 py-1 rounded-full">คัดลอก</span>
                         </div>
+                        <div class="text-white font-bold text-[22px]">088-760-2271</div>
                     </div>
 
-                    <div class="virtual-card relative bg-gradient-to-r from-[#461F71] to-[#461F71] rounded-[24px] p-5 shadow-lg shadow-[#461F71]/20 overflow-hidden cursor-pointer border border-[#461F71]/30" onclick="copyText('สลิปนี้ซื้อขายกับร้านXinny เท่านั้น', this, 'note')">
-                        <div class="relative z-10 flex flex-col gap-4">
-                            <div class="flex justify-between items-center">
-                                <div class="bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
-                                    <span class="text-white font-bold text-sm tracking-wider">Note</span>
-                                </div>
-                                <button class="note-btn bg-white text-[#461F71] text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1.5 shadow-sm pointer-events-none">
-                                    คัดลอกข้อความ
-                                </button>
-                            </div>
-                            <div class="mt-2">
-                                <div class="text-white font-bold text-[18px] tracking-wide drop-shadow-md">"สลิปนี้ซื้อขายกับร้านXinny เท่านั้น"</div>
-                            </div>
-                        </div>
+                    <div class="virtual-card bg-white rounded-[24px] p-5 shadow-sm border-2 border-pink-200 cursor-pointer" onclick="copyText('สลิปนี้ซื้อขายกับร้านXinny เท่านั้น', this)">
+                        <p class="text-pink-700 font-medium text-sm">"สลิปนี้ซื้อขายกับร้านXinny เท่านั้น"</p>
+                        <p class="text-pink-400 text-xs mt-1">คลิกเพื่อคัดลอก</p>
                     </div>
                 </div>
             </div>
@@ -227,7 +146,7 @@
     </div>
 
     <script>
-        function copyText(text, element, type) {
+        function copyText(text, element) {
             navigator.clipboard.writeText(text);
             const toast = document.getElementById('toast');
             toast.style.opacity = '1';
